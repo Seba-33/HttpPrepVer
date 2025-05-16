@@ -1,0 +1,12 @@
+<div>
+Nome:<input type = "text" #nome><br>
+Cognome:<input type = "text" #cognome> <br>
+Indirizzo:<input type = "text" #indirizzo> <br>
+Telefono:<input type = "number" #telefono> <br>
+Email:<input type = "text" #email>  <br>
+Data Prenotazione:<input type = "number" #datapren> <br>
+Ora Prenotazione:<input type = "number" #orapren>  <br>
+<button (click)="salva(nome.value,cognome.value,indirizzo.value,telefono.value,email.value,datapren.value,orapren.value)" >salva</button>
+</div>
+
+{{vettSalva}}
