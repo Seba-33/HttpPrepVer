@@ -1,5 +1,11 @@
 export class Salvataggi{
-    constructor(public nome : string, public cognome: string, public indirizzo: string, public telefono: number, public email: string, public datapren: number, public orapren: number ){
-
-    }
+    constructor( public data: string,
+                public ora: string,
+                public nome : string,
+                public cognome: string, 
+                public indirizzo: string,
+                public telefono: string,
+                public email: string,
+                
+            ){}
 }
