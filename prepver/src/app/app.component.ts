@@ -22,29 +22,29 @@ export class AppComponent {
   constructor(private http: HttpClient){
   this.obs =  this.http.get<Salvataggi[]>('https://my-json-server.typicode.com/malizia-g/verificaPrenotazioni/prenotazioni'); 
   //dico all'observable cosa fare quando ricevo i dati
-  this.obs.subscribe(this.getdata );
+  this.obs.subscribe(this.getdati);
   
   }
 
 
-  getdata = (data : Salvataggi[]) => {
-    console.log(data);
-    this.vettSalva = data;
+  getdati = (dati : Salvataggi[]) => {
+    console.log(dati);
+    this.vettSalva = dati;
   }
 
   
-  obsPost! : Observable<any>;
+  obsPren! : Observable<any>;
   salva( data : string, ora : string, nome : string, cognome : string, indirizzo : string, telefono : string, email : string ){
     let nuovaPren = new Salvataggi(data, ora, nome, cognome, indirizzo, telefono, email);
     this.vettSalva.push(nuovaPren);
 
-    this.obsPost = this.http.post('https://jsonplaceholder.typicode.com/posts', nuovaPren)
-    this.obsPost.subscribe(this.rispostaPost);
+    this.obsPren = this.http.post('https://jsonplaceholder.typicode.com/posts', nuovaPren);
+    this.obsPren.subscribe(this.rispostaPost);
     
   }
 
-  rispostaPost = (data : any) => {
-    console.log(data)
+  rispostaPost = (dati : any) => {
+    console.log(dati)
   }
 
   
