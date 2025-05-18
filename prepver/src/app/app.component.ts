@@ -38,6 +38,7 @@ export class AppComponent {
   salva( data : string, ora : string, nome : string, cognome : string, indirizzo : string, telefono : string, email : string ){
     let nuovaPren = new Salvataggi(data, ora, nome, cognome, indirizzo, telefono, email);
     this.vettSalva.push(nuovaPren);
+    console.log(this.vettSalva);
 
     this.obsPren = this.http.post('https://jsonplaceholder.typicode.com/posts', nuovaPren);
     this.obsPren.subscribe(this.rispostaPost);
