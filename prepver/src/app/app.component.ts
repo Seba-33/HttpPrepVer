@@ -16,7 +16,7 @@ import { DettagliPrenotazioneComponent } from './dettagli-prenotazione/dettagli-
 
 export class AppComponent {
   title = 'prepver';
-  vettSalva : Salvataggi[] = []
+  vettSalva : Salvataggi[] = [];
   obs : Observable<Salvataggi[]> ;
   obsPren! : Observable<any>;
 
