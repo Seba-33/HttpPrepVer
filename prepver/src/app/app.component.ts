@@ -18,6 +18,7 @@ export class AppComponent {
   title = 'prepver';
   vettSalva : Salvataggi[] = []
   obs : Observable<Salvataggi[]> ;
+  obsPren! : Observable<any>;
 
   constructor(private http: HttpClient){
   this.obs =  this.http.get<Salvataggi[]>('https://my-json-server.typicode.com/malizia-g/verificaPrenotazioni/prenotazioni'); 
@@ -33,7 +34,7 @@ export class AppComponent {
   }
 
   
-  obsPren! : Observable<any>;
+  
   salva( data : string, ora : string, nome : string, cognome : string, indirizzo : string, telefono : string, email : string ){
     let nuovaPren = new Salvataggi(data, ora, nome, cognome, indirizzo, telefono, email);
     this.vettSalva.push(nuovaPren);
